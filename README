@@ -1,5 +1,18 @@
-***Martians*** demonstrates a simulated astronaut survival scenario on Mars, focusing on environmental hazards, habitat operations, and emergency resource management. 
+***Martians*** is a simulated astronaut survival scenario on Mars, centered on environmental hazards, habitat operations, and emergency resource management.
 
-Through its 3D environment, monitoring interfaces, narrative elements, and survival decision, the project illustrates the importance of protecting essential systems during a Martian dust storm.
+Through its 3D environment, monitoring interfaces, and survival decisions, it shows why protecting life-support systems and conserving energy matters during a Martian dust storm.
 
-The demonstrated successful outcome reinforces the importance of prioritizing life-support systems and conserving energy until environmental conditions improve.
+**Framework Used**\
+This code is using vite
+
+**Install dependencies**\
+npm install
+
+**Run the project**\
+npm run dev
+
+**Build the project**\
+npm run build
+
+**Preview the project**\
+npm run preview
