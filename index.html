@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mars Outpost</title>
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; background: #000; font-family: system-ui, sans-serif; }
+    canvas { display: block; }
+
+    #start {
+      position: fixed; inset: 0; z-index: 10; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 14px; color: #fff; text-align: center;
+      background: rgba(10, 4, 0, 0.72); transition: opacity 0.8s;
+    }
+    #start h1 { margin: 0; font-size: clamp(28px, 6vw, 56px); letter-spacing: 0.12em; }
+    #start p { margin: 0; opacity: 0.8; }
+    #startBtn {
+      padding: 14px 28px; font-size: 18px; border: 0; border-radius: 10px; cursor: pointer;
+      background: #ff7a3c; color: #fff; font-weight: 600;
+    }
+    #startBtn:disabled { opacity: 0.5; cursor: default; }
+
+    /* "Press F for fullscreen" hint: fades in when the assets are loaded */
+    #fsHint {
+      margin-top: 6px; font-family: monospace; font-size: 14px; letter-spacing: 0.12em;
+      color: #9fe8ff; opacity: 0; transition: opacity 0.8s; cursor: pointer; user-select: none;
+    }
+    #fsHint kbd {
+      display: inline-block; padding: 2px 10px; margin: 0 4px; border: 1px solid #4ff0d8;
+      border-radius: 4px; color: #d8fff6; font: inherit; font-weight: bold;
+      background: rgba(79, 240, 216, 0.12);
+    }
+
+    #caption {
+      position: fixed; left: 28px; bottom: 34px; color: #fff; opacity: 0;
+      transform: translateY(8px); transition: opacity 0.6s, transform 0.6s;
+      border-left: 3px solid #ff7a3c; padding: 6px 14px; background: rgba(0, 0, 0, 0.35);
+      text-shadow: 0 0 6px #000; pointer-events: none;
+    }
+    #caption.show { opacity: 1; transform: none; }
+    #caption b { display: block; font-size: 20px; letter-spacing: 0.1em; }
+    #caption span { font-size: 14px; opacity: 0.85; }
+
+    #hint {
+      position: fixed; top: 14px; right: 16px; z-index: 5; pointer-events: none;
+      color: #fffa; font-size: 12px; text-align: right; line-height: 1.5;
+      text-shadow: 0 0 4px #000;
+    }
+  </style>
+</head>
+<body>
+  <div id="start">
+    <h1>MARS OUTPOST</h1>
+    <p>Sol 214 · Turn your sound on</p>
+    <button id="startBtn" disabled>Loading assets…</button>
+    <div id="fsHint">Press <kbd>F</kbd> for fullscreen · better experience</div>
+  </div>
+
+  <div id="caption"></div>
+
+  <div id="hint">
+    F = fullscreen<br>
+    M = mute<br>
+    Mouse = look around<br>
+    1 / 2 / 3 = look at the screens
+  </div>
+
+  <!-- The emergency banner, the "what happens next" guide, the screen explainer
+       and the decision console are all created by src/main.js. -->
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
